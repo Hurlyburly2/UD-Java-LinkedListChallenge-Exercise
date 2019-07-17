@@ -20,17 +20,21 @@ public class Album {
         return songs;
     }
 
+    public Song getSong(int songIndex) {
+        return songs.get(songIndex);
+    }
+
     public void addSong(Song song) {
         songs.add(song);
     }
 
     public void displayList() {
-        System.out.println(name + ": ");
-
         Iterator songIterator = songs.listIterator();
+        int counter = 0;
         while (songIterator.hasNext()) {
             Song currentSong = (Song) songIterator.next();
-            System.out.println(" * " + currentSong.getTitle() + " - " + currentSong.getDuration());
+            System.out.println("   " + counter + ". " + currentSong.getTitle() + " - " + currentSong.getDuration());
+            counter++;
         }
     }
 }

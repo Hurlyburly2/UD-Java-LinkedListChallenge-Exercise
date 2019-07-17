@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6335180-9b35-4c6c-a6c1-cfcc9a85ed43" name="Default Changelist" comment="" />
+    <list default="true" id="a6335180-9b35-4c6c-a6c1-cfcc9a85ed43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/com/dsimon/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dsimon/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dsimon/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dsimon/Playlist.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +27,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dsimon/Playlist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="52" column="62" lean-forward="true" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+            <state relative-caret-position="210">
+              <caret line="145" column="40" selection-start-line="145" selection-start-column="40" selection-end-line="145" selection-end-column="40" />
+              <folding>
+                <element signature="method#displayOptions#0;class#Playlist#0" />
+                <element signature="method#displayAll#0;class#Playlist#0" />
+                <element signature="method#addSong#0;class#Playlist#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dsimon/Album.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+            <state relative-caret-position="255">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -68,8 +76,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/dsimon/Song.java" />
         <option value="$PROJECT_DIR$/src/com/dsimon/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/dsimon/Playlist.java" />
         <option value="$PROJECT_DIR$/src/com/dsimon/Album.java" />
+        <option value="$PROJECT_DIR$/src/com/dsimon/Playlist.java" />
       </list>
     </option>
   </component>
@@ -157,7 +165,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -169,7 +176,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Messages" weight="0.3290653" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290653" />
@@ -195,13 +202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dsimon/Playlist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="52" column="62" lean-forward="true" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dsimon/Song.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -211,8 +211,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dsimon/Album.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        <state relative-caret-position="255">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dsimon/Playlist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="145" column="40" selection-start-line="145" selection-start-column="40" selection-end-line="145" selection-end-column="40" />
+          <folding>
+            <element signature="method#displayOptions#0;class#Playlist#0" />
+            <element signature="method#displayAll#0;class#Playlist#0" />
+            <element signature="method#addSong#0;class#Playlist#0" />
+          </folding>
         </state>
       </provider>
     </entry>

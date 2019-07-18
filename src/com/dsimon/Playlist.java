@@ -1,9 +1,6 @@
 package com.dsimon;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Playlist {
     private String name;
@@ -11,8 +8,9 @@ public class Playlist {
     private Scanner scanner = new Scanner(System.in);
 
     private LinkedList<Song> playList;
-    private Iterator nowPlaying;
+    private ListIterator<Song> nowPlaying;
     private Song loadedSong = null;
+    boolean goingForward = true;
 
     public Playlist(String name) {
         this.name = name;
@@ -51,6 +49,20 @@ public class Playlist {
                         addSong();
                         break;
                     case 5:
+                        nextSong();
+                        break;
+                    case 6:
+                        previousSong();
+                        break;
+                    case 7:
+                        repeatSong();
+                        break;
+                    case 8:
+                        if (playList.size() > 0) {
+                            removeCurrentSong();
+                        }
+                        break;
+                    case 9:
                         done = true;
                         break;
                     default:
@@ -67,7 +79,11 @@ public class Playlist {
         System.out.println(" 2. View all Albums and Songs");
         System.out.println(" 3. View All Playlist Songs");
         System.out.println(" 4. Add a Song to Playlist");
-        System.out.println(" 5. Quit");
+        System.out.println(" 5. Next Song");
+        System.out.println(" 6. Previous Song");
+        System.out.println(" 7. Repeat Song");
+        System.out.println(" 8. Remove Song");
+        System.out.println(" 9. Quit");
     }
 
     private int display(String type) {
@@ -129,10 +145,8 @@ public class Playlist {
         Song selectedSong = selectedAlbum.getSong(selectedSongIndex);
         playList.add(selectedSong);
         System.out.println("Song added!");
-        if (playList.size() == 1) {
-            nowPlaying = playList.iterator();
-            loadedSong = (Song) nowPlaying.next();
-        }
+        nowPlaying = playList.listIterator();
+        loadedSong = nowPlaying.next();
     }
 
     private void showPlayList() {
@@ -151,5 +165,60 @@ public class Playlist {
             System.out.println("You haven't added any songs yet!");
         }
 
+    }
+
+    private void nextSong() {
+        if (!goingForward) {
+            if (nowPlaying.hasNext()) {
+                nowPlaying.next();
+            }
+            goingForward = true;
+        }
+        if (nowPlaying.hasNext()) {
+            loadedSong = nowPlaying.next();
+            System.out.println("Now playing " + loadedSong.getTitle());
+        } else {
+            System.out.println("There are no more songs in the playlist");
+        }
+    }
+
+    private void previousSong() {
+        if (goingForward) {
+            if (nowPlaying.hasPrevious()) {
+                nowPlaying.previous();
+            }
+            goingForward = false;
+        }
+        if (nowPlaying.hasPrevious()) {
+            loadedSong = nowPlaying.previous();
+            System.out.println("Now playing " + loadedSong.getTitle());
+        } else {
+            System.out.println("There are no earlier songs in the playlist");
+        }
+    }
+
+    private void repeatSong() {
+        if (playList.size() > 0) {
+            nowPlaying.previous();
+            nowPlaying.next();
+            System.out.println("Repeating song " + loadedSong.getTitle());
+        } else {
+            System.out.println("No songs in the playlist");
+        }
+    }
+
+    private void removeCurrentSong() {
+        System.out.println("Removing song " + loadedSong.getTitle());
+        nowPlaying.remove();
+        if (nowPlaying.hasNext()) {
+            loadedSong = nowPlaying.next();
+            System.out.println("Now playing: " + loadedSong.getTitle());
+        } else if (nowPlaying.hasPrevious()) {
+            loadedSong = nowPlaying.previous();
+            System.out.println("Now playing " + loadedSong.getTitle());
+        } else {
+            System.out.println("No songs left");
+            loadedSong = null;
+        }
     }
 }
